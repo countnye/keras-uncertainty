@@ -116,7 +116,8 @@ class StochasticClassifier(StochasticModel):
                 outputs.append(mean_probs)
 
             return outputs
-
+        print(type(samples))
+        print(samples)
         mean_probs = K.mean(samples, axis=0)
 
         return mean_probs
