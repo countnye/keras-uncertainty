@@ -50,7 +50,7 @@ class StochasticModel:
         for i in range(num_samples):
             samples[i] = self.model(x, **kwargs)
 
-        return tf.convert_to_tensor(samples, dtype=tf.float32)
+        return K.variable(samples)
 
     #TODO Find a way to keep output names
     def divide_outputs(self, multi_output_samples, num_outputs):
