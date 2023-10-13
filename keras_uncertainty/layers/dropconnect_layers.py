@@ -122,7 +122,7 @@ class DropConnectConvND(DropConnect, Layer):
         kernel_sample = self.sample(self.kernel)
         output = self.conv(inputs, kernel_sample)
 
-        if self.use_bias:
+        if not self.drop_bias:
             bias_sample = self.sample(self.bias, dropit=self.drop_bias)
             output = K.bias_add(output, bias_sample, data_format="channels_last")
 
